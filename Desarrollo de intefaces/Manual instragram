@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historias de Instagram – Manual Interactivo</title>
+
+  <style>
+    /* ------- ESTILOS GENERALES ------- */
+    body {
+      margin: 0;
+      font-family: "Inter", Arial, sans-serif;
+      background: #f5f7fa;
+      color: #1a1d21;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #111;
+      font-weight: 600;
+    }
+
+    /* ------- NAVEGACIÓN ------- */
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    nav button {
+      padding: 10px 16px;
+      border-radius: 12px;
+      border: none;
+      background: #e8ecf2;
+      cursor: pointer;
+      font-size: 15px;
+      transition: 0.2s;
+    }
+
+    nav button.active {
+      background: #4b9fff;
+      color: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    }
+
+    nav button:hover {
+      background: #dfe6ef;
+    }
+
+    /* ------- SECCIONES ------- */
+    .section {
+      display: none;
+      padding: 25px;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      border: 1px solid #e0e6ee;
+    }
+
+    /* Placeholder para imágenes */
+    .placeholder {
+      height: 180px;
+      background: #f1f4f8;
+      border: 2px dashed #c6d1e1;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #8a97a7;
+      font-size: 15px;
+      margin-top: 12px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- NAVEGACIÓN -->
+  <nav>
+    <button class="tab active" data-target="reqs">Requisitos</button>
+    <button class="tab" data-target="access">Acceso a Historias</button>
+    <button class="tab" data-target="create">Crear Historia</button>
+    <button class="tab" data-target="edit">Editar Historia</button>
+    <button class="tab" data-target="publish">Publicar</button>
+    <button class="tab" data-target="after">Gestión Posterior</button>
+  </nav>
+
+  <!-- SECCIONES -->
+
+  <section id="reqs" class="section" style="display: block;">
+    <h2>Requisitos</h2>
+    <ul>
+      <li>Aplicación de Instagram actualizada.</li>
+      <li>Permiso de acceso a cámara y galería.</li>
+      <li>Conexión a internet estable.</li>
+      <li>Cuenta activa con sesión iniciada.</li>
+    </ul>
+  </section>
+
+
+  <section id="access" class="section">
+    <h2>Acceso a las Historias</h2>
+    <ol>
+      <li>Abre Instagram.</li>
+      <li>Toca tu foto de perfil en la esquina superior izquierda.</li>
+      <li>O desliza hacia la derecha desde el feed.</li>
+    </ol>
+
+    <div class="placeholder">Colocar captura del acceso a historias</div>
+  </section>
+
+
+  <section id="create" class="section">
+    <h2>Crear una Historia</h2>
+    <h3>Desde la cámara</h3>
+    <p>Toca el botón circular para tomar una foto o mantenlo presionado para un video.</p>
+
+    <h3>Desde la galería</h3>
+    <p>Desliza hacia arriba y selecciona una imagen o video.</p>
+
+    <div class="placeholder">Captura: cámara o selección desde galería</div>
+  </section>
+
+
+  <section id="edit" class="section">
+    <h2>Editar la Historia</h2>
+    <ul>
+      <li>Añadir texto.</li>
+      <li>Stickers y GIFs.</li>
+      <li>Música.</li>
+      <li>Menciones.</li>
+      <li>Filtros.</li>
+      <li>Dibujo con pincel.</li>
+    </ul>
+
+    <div class="placeholder">Captura del editor de historias</div>
+  </section>
+
+
+  <section id="publish" class="section">
+    <h2>Publicar</h2>
+    <p>Selecciona una opción:</p>
+    <ul>
+      <li><strong>Tu historia</strong>: visible para todos tus seguidores.</li>
+      <li><strong>Mejores amigos</strong>: solo para una lista privada.</li>
+    </ul>
+
+    <div class="placeholder">Botón de “Publicar historia”</div>
+  </section>
+
+
+  <section id="after" class="section">
+    <h2>Gestión Posterior</h2>
+    <ul>
+      <li>Duración: 24 horas.</li>
+      <li>Consulta de visualizaciones.</li>
+      <li>Opción de eliminar.</li>
+      <li>Añadir a “Destacados”.</li>
+    </ul>
+  </section>
+
+</div>
+
+<script>
+  /* Control de pestañas */
+  const tabs = document.querySelectorAll(".tab");
+  const sections = document.querySelectorAll(".section");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      sections.forEach(s => s.style.display = "none");
+      document.getElementById(tab.dataset.target).style.display = "block";
+    });
+  });
+</script>
+
+</body>
+</html>
